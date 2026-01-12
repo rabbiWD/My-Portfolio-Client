@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaLinkedin, FaEnvelope, FaFileDownload, FaHome, FaInfoCircle } from "react-icons/fa";
 
 export default function Header() {
-  const cvDownloadLink = "../../public/Rabbi Khan Resume(3).pdf";
+  const cvDownloadLink = "../../public/Rabbi Khan Resume (4).pdf";
 
   return (
     // Outer container for Fixed Header (covers full width of viewport)
