@@ -23,6 +23,9 @@ import {
   SiJsonwebtokens,
   SiAxios,
   SiGreensock,
+  SiZod,
+  SiTypescript,
+  SiPostgresql,
 } from "react-icons/si";
 
 import { VscVscode } from "react-icons/vsc";
@@ -32,8 +35,11 @@ import { TbBellRinging } from "react-icons/tb";
 export default function Skills() {
   const skills = [
     // ---------- Frontend ----------
+    {name: "TypeScript", icon: <SiTypescript className="text-blue-600" />, category: "Frontend"},
+    {name: "RTK Query", icon: <SiReactquery className="text-red-500" />, category: "Frontend"},
     { name: "React.js", icon: <FaReact className="text-sky-500" />, category: "Frontend" },
     { name: "Next.js", icon: <SiNextdotjs className="text-slate-800" />, category: "Frontend" },
+    {name: "Zod", icon: <SiZod className="text-indigo-600" />, category: "Frontend"},
     { name: "JavaScript (ES6+)", icon: <FaJs className="text-yellow-600" />, category: "Frontend" },
     { name: "HTML5", icon: <FaHtml5 className="text-orange-600" />, category: "Frontend" },
     { name: "CSS3", icon: <FaCss3Alt className="text-blue-600" />, category: "Frontend" },
@@ -42,7 +48,9 @@ export default function Skills() {
     // ---------- Backend & Database ----------
     { name: "Node.js", icon: <FaNodeJs className="text-green-600" />, category: "Backend" },
     { name: "Express.js", icon: <SiExpress className="text-slate-800" />, category: "Backend" },
+    {name: "TypeScript", icon: <SiTypescript className="text-blue-600" />, category: "Backend"},
     { name: "MongoDB", icon: <SiMongodb className="text-green-500" />, category: "Database" },
+    { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-700" />, category: "Database"},
     { name: "JWT Auth", icon: <SiJsonwebtokens className="text-red-500" />, category: "Backend" },
     
     // ---------- Tools & Platforms ----------

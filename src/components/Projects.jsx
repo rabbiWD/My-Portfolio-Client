@@ -3,8 +3,26 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaCode } from "react-icons/fa";
 
 const PROJECTS = [
-  {
+   {
     _id: "p1",
+    title: "Web Zen Platform",
+    desc: "A fully functional MERN stack e-commerce platform featuring secure payment processing, user authentication, cart management, and admin dashboard controls.",
+    image: "https://i.ibb.co.com/SX2RR5g7/webzen.png",
+    repo: "https://github.com/rabbiWD/Web-Zen",
+    live: "https://web-zen-client.vercel.app/",
+    tech: ["Next.Js", "Firebase", "Express", "MongoDB", "Tailwind CSS"],
+  },
+  // {
+  //   _id: "p2",
+  //   title: "Financial Management Apps",
+  //   desc: "A fully functional MERN stack e-commerce platform featuring secure payment processing, user authentication, cart management, and admin dashboard controls.",
+  //   image: "https://i.ibb.co.com/gFjC1Rr3/finance.png",
+  //   repo: "https://github.com/rabbiWD/Finance-Management-Apps-Client",
+  //   live: "https://finance-management-apps-client.netlify.app/",
+  //   tech: ["React", "Firebase", "Express", "MongoDB", "Tailwind", "Node.js"],
+  // },
+  {
+    _id: "p2",
     title: "Financial Management Apps",
     desc: "A fully functional MERN stack e-commerce platform featuring secure payment processing, user authentication, cart management, and admin dashboard controls.",
     image: "https://i.ibb.co.com/gFjC1Rr3/finance.png",
@@ -13,7 +31,7 @@ const PROJECTS = [
     tech: ["React", "Firebase", "Express", "MongoDB", "Tailwind", "Node.js"],
   },
   {
-    _id: "p2",
+    _id: "p3",
     title: "Skill Platform",
     desc: "A responsive Kanban-style task management application built with Next.js for efficient workflow visualization, user collaboration, and data persistence.",
     image: "https://i.ibb.co.com/wq141jD/skillplatform.png",
@@ -21,15 +39,15 @@ const PROJECTS = [
     live: "https://skill-exchange-platform.netlify.app/",
     tech: ["React.js", "Tailwind CSS", "Firebase"],
   },
-  {
-    _id: "p3",
-    title: "Hero App",
-    desc: "A platform connecting employers and job seekers. Features dynamic job searching, filtering, and a dedicated dashboard for posting and tracking applications.",
-    image: "https://i.ibb.co.com/B2wZwFcj/hero.png",
-    repo: "https://github.com/rabbiWD/Hero-App",
-    live: "https://heroioapp.netlify.app/",
-    tech: ["React", "Tailwind", "Firebase"],
-  },
+  // {
+  //   _id: "p4",
+  //   title: "Hero App",
+  //   desc: "A platform connecting employers and job seekers. Features dynamic job searching, filtering, and a dedicated dashboard for posting and tracking applications.",
+  //   image: "https://i.ibb.co.com/B2wZwFcj/hero.png",
+  //   repo: "https://github.com/rabbiWD/Hero-App",
+  //   live: "https://heroioapp.netlify.app/",
+  //   tech: ["React", "Tailwind", "Firebase"],
+  // },
 ];
 
 const ProjectCard = ({ p, i }) => {
@@ -104,7 +122,7 @@ const ProjectCard = ({ p, i }) => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Live Demo <FaExternalLinkAlt className="text-xs" />
+            Live Site <FaExternalLinkAlt className="text-xs" />
           </motion.a>
         </div>
       </div>
