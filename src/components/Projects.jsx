@@ -246,55 +246,55 @@ export default function Projects() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ duration: 0.3 }}
-              className="relative w-full max-w-3xl bg-[#0f172a] border border-cyan-500/30 rounded-3xl shadow-2xl overflow-hidden my-8"
+              className="relative w-full max-w-2xl bg-[#0f172a] border border-cyan-500/30 rounded-3xl shadow-2xl overflow-hidden my-4 max-h-[85vh] flex flex-col"
             >
               {/* Close Button */}
               <button
                 onClick={() => setActiveModalProject(null)}
-                className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-slate-800/90 text-slate-300 hover:text-white hover:bg-slate-700 transition border border-slate-700"
+                className="absolute top-3.5 right-3.5 z-10 p-2 rounded-full bg-slate-800/90 text-slate-300 hover:text-white hover:bg-slate-700 transition border border-slate-700 cursor-pointer"
               >
-                <FaTimes className="text-lg" />
+                <FaTimes className="text-base" />
               </button>
 
               {/* Modal Banner */}
-              <div className="relative aspect-video w-full max-h-72 overflow-hidden bg-slate-900">
+              <div className="relative w-full h-44 sm:h-52 overflow-hidden bg-slate-900 flex-shrink-0">
                 <img
                   src={activeModalProject.image}
                   alt={activeModalProject.title}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between">
-                  <span className="px-3.5 py-1 rounded-full text-xs font-bold bg-cyan-950/80 text-cyan-300 border border-cyan-500/30">
+                <div className="absolute bottom-3 left-5 right-5 flex items-center justify-between">
+                  <span className="px-3 py-0.5 rounded-full text-xs font-bold bg-cyan-950/80 text-cyan-300 border border-cyan-500/30">
                     {activeModalProject.category}
                   </span>
                 </div>
               </div>
 
               {/* Modal Body */}
-              <div className="p-6 sm:p-8 space-y-6 max-h-[60vh] overflow-y-auto">
+              <div className="p-5 sm:p-6 space-y-4 max-h-[45vh] overflow-y-auto flex-1">
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white mb-1.5">
                     {activeModalProject.title}
                   </h3>
-                  <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
                     {activeModalProject.fullDesc || activeModalProject.desc}
                   </p>
                 </div>
 
                 {/* Key Features Bullet List */}
                 {activeModalProject.features && (
-                  <div className="space-y-3">
-                    <h4 className="text-sm font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-2">
+                  <div className="space-y-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5">
                       <FaLayerGroup /> Key Highlights & Features
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {activeModalProject.features.map((feat, idx) => (
                         <div
                           key={idx}
-                          className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-800/50 border border-slate-800 text-xs sm:text-sm text-slate-300"
+                          className="flex items-start gap-2 p-2.5 rounded-xl bg-slate-800/50 border border-slate-800 text-xs text-slate-300"
                         >
-                          <FaCheckCircle className="text-cyan-400 mt-0.5 flex-shrink-0" />
+                          <FaCheckCircle className="text-cyan-400 mt-0.5 flex-shrink-0 text-xs" />
                           <span>{feat}</span>
                         </div>
                       ))}
@@ -303,15 +303,15 @@ export default function Projects() {
                 )}
 
                 {/* Technologies Grid */}
-                <div className="space-y-3">
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-slate-400">
+                <div className="space-y-2 pt-1">
+                  <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">
                     Tech Stack & Tools
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {activeModalProject.tech.map((t) => (
                       <span
                         key={t}
-                        className="px-3 py-1.5 rounded-xl bg-cyan-950/50 border border-cyan-500/30 text-cyan-300 font-semibold text-xs"
+                        className="px-2.5 py-1 rounded-lg bg-cyan-950/50 border border-cyan-500/30 text-cyan-300 font-semibold text-xs"
                       >
                         {t}
                       </span>
@@ -321,21 +321,21 @@ export default function Projects() {
               </div>
 
               {/* Modal Footer Actions */}
-              <div className="p-6 bg-slate-900/90 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4">
+              <div className="p-4 sm:p-5 bg-slate-900/90 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 flex-shrink-0">
                 <a
                   href={activeModalProject.repo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm font-bold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 px-5 py-2.5 rounded-xl border border-slate-700 transition"
+                  className="flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-xl border border-slate-700 transition"
                 >
-                  <FaGithub className="text-lg" /> Source Code
+                  <FaGithub className="text-base" /> Source Code
                 </a>
 
                 <a
                   href={activeModalProject.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm font-bold text-white bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 px-6 py-2.5 rounded-xl shadow-lg transition"
+                  className="flex items-center gap-2 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 px-5 py-2 rounded-xl shadow-lg transition"
                 >
                   Live Preview <FaExternalLinkAlt className="text-xs" />
                 </a>
