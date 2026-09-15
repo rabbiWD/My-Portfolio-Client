@@ -114,9 +114,9 @@ export default function About() {
 
   const stats = [
     {
-      label: "Years of Experience",
-      value: "1+",
-      unit: "Years",
+      label: "Months of Experience",
+      value: "6+",
+      unit: "Months",
       icon: FaCode,
       glow: "shadow-purple-500/10 border-purple-500/30 text-purple-400 bg-[#080d22]",
     },
@@ -145,7 +145,7 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 sm:py-32 text-slate-100 relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         
         {/* Main Section Header */}
         <motion.div
@@ -172,7 +172,7 @@ export default function About() {
           className="mb-14 text-slate-300 text-base sm:text-lg leading-relaxed max-w-5xl"
         >
           <p className="mb-4">
-            Hi, I'm <strong className="text-white font-bold">Rabbi Khan</strong> – a passionate web developer with over <strong className="text-white font-bold">1+ year of experience</strong> building modern full-stack applications. I love transforming ideas into scalable, intelligent, and impactful digital products that solve real-world problems.
+            Hi, I'm <strong className="text-white font-bold">Rabbi Khan</strong> – a passionate web developer with over <strong className="text-white font-bold">6+ months of experience</strong> building modern full-stack applications. I love transforming ideas into scalable, intelligent, and impactful digital products that solve real-world problems.
           </p>
           <p className="mb-6">
             I specialize in <strong className="text-white font-bold">designing</strong> and <strong className="text-white font-bold">building robust full-stack applications</strong>. My focus is on <strong className="text-white font-bold">system design</strong>, <strong className="text-white font-bold">backend engineering</strong>, and <strong className="text-white font-bold">DevOps</strong>, with a strong emphasis on building scalable, secure, maintainable, and future-ready solutions. Here are some of the key technologies I work with:
