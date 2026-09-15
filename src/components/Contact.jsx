@@ -7,17 +7,13 @@ import {
   FaPaperPlane,
   FaCheckCircle,
   FaTimesCircle,
+  FaPhoneAlt,
 } from 'react-icons/fa';
-import { PhoneCall } from 'lucide-react';
 
-// Environment Variables: Using import.meta.env for Vite, assuming you are using VITE_ prefix.
-// If your .env uses REACT_APP_, ensure your build tool handles it.
-// Assuming your VITE setup uses REACT_APP_EMAILJS... as keys in .env
 const SERVICE_ID = import.meta.env.VITE_REACT_APP_EMAILJS_SERVICE_ID || import.meta.env.REACT_APP_EMAILJS_SERVICE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_REACT_APP_EMAILJS_PUBLIC_KEY || import.meta.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 const OWNER_TEMPLATE_ID = import.meta.env.VITE_REACT_APP_EMAILJS_OWNER_TEMPLATE_ID || import.meta.env.REACT_APP_EMAILJS_OWNER_TEMPLATE_ID;
 const AUTO_REPLY_TEMPLATE_ID = import.meta.env.VITE_REACT_APP_EMAILJS_AUTO_REPLY_TEMPLATE_ID || import.meta.env.REACT_APP_EMAILJS_AUTO_REPLY_TEMPLATE_ID;
-
 
 const Contact = () => {
   const form = useRef();
@@ -35,35 +31,29 @@ const Contact = () => {
     e.preventDefault();
     setStatus('sending');
 
-    // EmailJS credentials validation check
     if (!SERVICE_ID || !PUBLIC_KEY || !OWNER_TEMPLATE_ID || !AUTO_REPLY_TEMPLATE_ID) {
-        console.error("EmailJS credentials are missing or invalid. Check your .env file and ensure the environment is correctly loading variables.");
-        setStatus('error');
-        setTimeout(() => setStatus(''), 7000);
-        return;
+      console.error("EmailJS credentials missing in environment.");
+      setStatus('error');
+      setTimeout(() => setStatus(''), 7000);
+      return;
     }
 
     const templateParams = { ...formData };
 
     try {
-      // 1. Send notification to the owner
-      const ownerResult = await emailjs.send(
+      await emailjs.send(
         SERVICE_ID,
         OWNER_TEMPLATE_ID,
         templateParams,
         PUBLIC_KEY
       );
-      console.log('SUCCESS! Notification sent to owner:', ownerResult.text);
 
-      // 2. Send auto-reply to the user
-      const replyResult = await emailjs.send(
+      await emailjs.send(
         SERVICE_ID,
         AUTO_REPLY_TEMPLATE_ID,
         templateParams,
         PUBLIC_KEY
       );
-      console.log('SUCCESS! Auto-reply sent to user:', replyResult.text);
-
 
       setStatus('success');
       setFormData({ name: '', email: '', message: '' });
@@ -79,16 +69,14 @@ const Contact = () => {
     (window.location.href = 'mailto:krabby2244@gmail.com');
   const handleLocationClick = () =>
     window.open(
-      'https://maps.google.com/?cid=2611912027865683040&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ', 
+      'https://maps.google.com/?cid=2611912027865683040', 
       '_blank'
     );
 
   return (
-    <section
-      id="contact"
-      className="py-16 sm:py-24 bg-white text-gray-800"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 sm:py-32 text-slate-100 relative">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12">
+        
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -97,94 +85,89 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Get In Touch
+          <div className="inline-block px-4 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-widest mb-3">
+            Contact Me
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 text-white">
+            Get In <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Touch</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Have a project in mind or just want to say hi? Feel free to reach
-            out!
+          <p className="text-slate-300 max-w-2xl mx-auto text-base sm:text-lg">
+            Have a project in mind or want to discuss opportunities? I'd love to hear from you!
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Contact Info */}
+          
+          {/* Contact Info Side */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h3 className="text-2xl font-bold">Contact Information</h3>
-            <p className="text-gray-600 leading-relaxed border-l-4 border-blue-500 pl-4">
-              I'm currently available for web development work and open to
-              full-time opportunities. If you have a question or just want to
-              connect, I'll try my best to get back to you!
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+              Let's Connect & Collaborate
+            </h3>
+            <p className="text-slate-300 leading-relaxed border-l-4 border-cyan-500 pl-4 text-base">
+              I am currently available for full-stack MERN roles, freelance projects, and remote engineering opportunities. Send me a message and I will reply within 24 hours!
             </p>
 
-            <div className="space-y-6 pt-4">
-              {/* Email */}
+            <div className="space-y-5 pt-2">
+              {/* Email Card */}
               <motion.div
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: '0 10px 20px rgba(59,130,246,0.2)',
-                }}
-                className="flex items-center space-x-4 p-5 rounded-xl bg-white shadow-lg border border-gray-200 transition-all duration-300 cursor-pointer"
+                whileHover={{ x: 5 }}
                 onClick={handleEmailClick}
+                className="flex items-center space-x-4 p-5 rounded-2xl bg-[#0f172a]/80 border border-slate-800 hover:border-cyan-500/40 shadow-xl cursor-pointer backdrop-blur-md transition-all"
               >
-                <div className="w-12 h-12 flex items-center justify-center bg-blue-600 rounded-full text-white flex-shrink-0">
+                <div className="w-12 h-12 flex items-center justify-center bg-cyan-950 text-cyan-400 rounded-xl border border-cyan-500/30 flex-shrink-0">
                   <FaEnvelope className="text-xl" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 font-semibold">
+                  <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">
                     Email Address
                   </p>
-                  <p className="font-bold text-lg hover:underline cursor-pointer">
+                  <p className="font-bold text-lg text-white hover:text-cyan-300 transition-colors">
                     krabby2244@gmail.com
                   </p>
                 </div>
               </motion.div>
 
-              {/* Call */}
+              {/* Call Card */}
               <motion.div
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: '0 10px 20px rgba(52,211,153,0.2)',
-                }}
-                className="flex items-center space-x-4 p-5 rounded-xl bg-white shadow-lg border border-gray-200 transition-all duration-300"
+                whileHover={{ x: 5 }}
+                className="flex items-center space-x-4 p-5 rounded-2xl bg-[#0f172a]/80 border border-slate-800 hover:border-emerald-500/40 shadow-xl backdrop-blur-md transition-all"
               >
-                <div className="w-12 h-12 flex items-center justify-center bg-green-500 rounded-full text-white flex-shrink-0">
-                  <PhoneCall className="text-xl" />
+                <div className="w-12 h-12 flex items-center justify-center bg-emerald-950 text-emerald-400 rounded-xl border border-emerald-500/30 flex-shrink-0">
+                  <FaPhoneAlt className="text-lg" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 font-semibold">
-                    Call Now
+                  <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">
+                    Direct Phone / WhatsApp
                   </p>
                   <a
                     href="tel:+8801824903989"
-                    className="font-bold text-lg hover:text-green-500 transition-colors hover:underline">
-                    01824903989
+                    className="font-bold text-lg text-white hover:text-emerald-300 transition-colors"
+                  >
+                    +880 1824-903989
                   </a>
                 </div>
               </motion.div>
 
-              {/* Location */}
+              {/* Location Card */}
               <motion.div
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: '0 10px 20px rgba(168,85,247,0.2)',
-                }}
-                className="flex items-center space-x-4 p-5 rounded-xl bg-white shadow-lg border border-gray-200 transition-all duration-300 cursor-pointer"
+                whileHover={{ x: 5 }}
                 onClick={handleLocationClick}
+                className="flex items-center space-x-4 p-5 rounded-2xl bg-[#0f172a]/80 border border-slate-800 hover:border-purple-500/40 shadow-xl cursor-pointer backdrop-blur-md transition-all"
               >
-                <div className="w-12 h-12 flex items-center justify-center bg-purple-600 rounded-full text-white flex-shrink-0">
+                <div className="w-12 h-12 flex items-center justify-center bg-purple-950 text-purple-400 rounded-xl border border-purple-500/30 flex-shrink-0">
                   <FaMapMarkerAlt className="text-xl" />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 font-semibold">
+                  <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">
                     Location
                   </p>
-                  <p className="font-bold text-lg hover:underline">
+                  <p className="font-bold text-lg text-white hover:text-purple-300 transition-colors">
                     Azimpur, Dhaka, Bangladesh
                   </p>
                 </div>
@@ -192,94 +175,95 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Contact Form Side */}
           <motion.form
             ref={form}
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="space-y-6 bg-white p-8 rounded-2xl shadow-2xl border border-gray-100"
             onSubmit={handleSubmit}
+            className="space-y-6 bg-[#0f172a]/80 p-8 sm:p-10 rounded-3xl border border-slate-800 shadow-2xl backdrop-blur-md"
           >
-            <h3 className="text-2xl font-bold mb-4">Send a Message</h3>
+            <h3 className="text-2xl font-extrabold text-white mb-2">Send Me a Message</h3>
 
-            {['name', 'email', 'message'].map((field, idx) => (
-              <div key={idx}>
-                <label
-                  htmlFor={field}
-                  className="block text-sm font-medium text-gray-700 mb-2 capitalize"
-                >
-                  {field}
-                </label>
-                {field !== 'message' ? (
-                  <motion.input
-                    whileFocus={{
-                      scale: 1.01,
-                      boxShadow: '0 0 0 3px rgba(59,130,246,0.5)',
-                    }}
-                    type={field === 'email' ? 'email' : 'text'}
-                    id={field}
-                    value={formData[field]}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 outline-none transition-all focus:border-blue-500"
-                    placeholder={`Your ${field}`}
-                  />
-                ) : (
-                  <motion.textarea
-                    whileFocus={{
-                      scale: 1.01,
-                      boxShadow: '0 0 0 3px rgba(59,130,246,0.5)',
-                    }}
-                    id={field}
-                    rows="5"
-                    value={formData[field]}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 outline-none transition-all resize-none focus:border-blue-500"
-                    placeholder="Your message..."
-                  />
-                )}
-              </div>
-            ))}
+            <div>
+              <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                Your Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                placeholder="John Doe"
+                className="w-full px-4 py-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-white placeholder-slate-500 outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
+              />
+            </div>
 
-            <motion.button
-              whileHover={{
-                scale: 1.02,
-                boxShadow: '0 5px 15px rgba(59,130,246,0.5)',
-              }}
-              whileTap={{ scale: 0.98 }}
+            <div>
+              <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                Your Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                placeholder="john@example.com"
+                className="w-full px-4 py-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-white placeholder-slate-500 outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
+                Your Message
+              </label>
+              <textarea
+                id="message"
+                rows="5"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                placeholder="Tell me about your project or inquiry..."
+                className="w-full px-4 py-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-white placeholder-slate-500 outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all resize-none"
+              />
+            </div>
+
+            <button
               type="submit"
               disabled={status === 'sending'}
-              className={`w-full py-4 px-6 font-bold text-lg rounded-xl shadow-xl transition-all duration-300 flex items-center justify-center gap-3 uppercase tracking-wider ${
+              className={`w-full py-4 px-6 font-bold text-base rounded-xl shadow-xl transition-all duration-300 flex items-center justify-center gap-3 uppercase tracking-wider ${
                 status === 'sending'
-                  ? 'bg-gray-500 cursor-not-allowed text-white'
-                  : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white'
+                  ? 'bg-slate-700 cursor-not-allowed text-slate-400'
+                  : 'bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white shadow-cyan-950'
               }`}
             >
               {status === 'sending' ? (
                 <>
-                  <FaPaperPlane className="animate-pulse" /> Sending...
+                  <FaPaperPlane className="animate-pulse" /> Sending Message...
                 </>
               ) : (
                 <>
                   <FaPaperPlane /> Send Message
                 </>
               )}
-            </motion.button>
+            </button>
 
             {status === 'success' && (
-              <p className="text-green-500 text-center font-semibold flex items-center justify-center gap-2 mt-4">
-                <FaCheckCircle /> Message sent successfully!
+              <p className="text-emerald-400 text-center font-semibold flex items-center justify-center gap-2 mt-4 text-sm">
+                <FaCheckCircle /> Your message has been sent successfully!
               </p>
             )}
             {status === 'error' && (
-              <p className="text-red-500 text-center font-semibold flex items-center justify-center gap-2 mt-4">
-                <FaTimesCircle /> Failed to send message.
+              <p className="text-red-400 text-center font-semibold flex items-center justify-center gap-2 mt-4 text-sm">
+                <FaTimesCircle /> Failed to send message. Please check EmailJS setup or try again.
               </p>
             )}
           </motion.form>
+
         </div>
       </div>
     </section>

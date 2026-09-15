@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Projects from "./components/Projects";
+import Experience from "./components/Experience";
 import Skills from "./components/Skills";
+import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -50,18 +51,20 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="relative min-h-screen text-slate-100 antialiased overflow-x-hidden">
+    <div className="relative min-h-screen text-slate-100 antialiased overflow-x-hidden bg-[#030712]">
       
       {/*  Smooth Scroll (Lenis) */}
       <SmoothScroll />
 
-      {/*  Smooth, fixed gradient background (no overflow issue) */}
-      <motion.div
-        className="fixed inset-0 -z-10 will-change-transform"
-        // style={{ background: bgGradient }}
-      />
+      {/*  Fixed Blue-Black Ambient Glow Background */}
+      <div className="fixed inset-0 -z-10 bg-[#030712] overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -left-40 w-[35rem] h-[35rem] bg-blue-700/20 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/3 -right-40 w-[38rem] h-[38rem] bg-cyan-600/15 rounded-full blur-[130px]"></div>
+        <div className="absolute bottom-10 left-1/4 w-[32rem] h-[32rem] bg-indigo-700/20 rounded-full blur-[110px]"></div>
+      </div>
 
       <Header />
+
 
       <motion.main
         initial="hidden"
@@ -89,14 +92,14 @@ export default function Portfolio() {
           <About />
         </motion.div>
 
-        {/* Projects */}
+        {/* Experience */}
         <motion.div
           variants={sectionVariant}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <Projects />
+          <Experience />
         </motion.div>
 
         {/* Skills */}
@@ -107,6 +110,16 @@ export default function Portfolio() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <Skills />
+        </motion.div>
+
+        {/* Projects */}
+        <motion.div
+          variants={sectionVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <Projects />
         </motion.div>
 
         {/* Contact */}
