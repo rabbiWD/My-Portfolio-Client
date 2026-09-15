@@ -110,7 +110,7 @@ const Contact = () => {
               Let's Connect & Collaborate
             </h3>
             <p className="text-slate-300 leading-relaxed border-l-4 border-cyan-500 pl-4 text-base">
-              I am currently available for full-stack MERN roles, freelance projects, and remote engineering opportunities. Send me a message and I will reply within 24 hours!
+              I am currently available for full-stack engineering roles, freelance projects, and remote engineering opportunities. Send me a message and I will reply within 24 hours!
             </p>
 
             <div className="space-y-5 pt-2">

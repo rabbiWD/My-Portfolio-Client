@@ -189,13 +189,13 @@ export default function Hero() {
           <h1 className="text-lg sm:text-2xl md:text-3xl lg:text-[2.2rem] xl:text-4xl font-extrabold leading-tight text-white min-h-[44px] sm:min-h-[56px] flex items-center whitespace-nowrap">
             <TypeAnimation
               sequence={[
-                "Full-Stack MERN Developer",
+                "Full-Stack Web Developer",
                 1800,
                 "Next.js & React Architect",
                 1800,
                 "Scalable Web App Developer",
                 1800,
-                "MERN Stack Specialist",
+                "Full-Stack Architect",
                 1800,
               ]}
               wrapper="span"
@@ -206,13 +206,13 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl">
-            A results-driven <strong className="text-cyan-300 font-bold">Full-Stack MERN Developer</strong> specializing in crafting modern web solutions from initial concept to cloud deployment. I transform complex ideas into secure, scalable, and responsive digital products.
+            A results-driven <strong className="text-cyan-300 font-bold">Full-Stack Web Developer</strong> specializing in crafting modern web solutions from initial concept to cloud deployment. I transform complex ideas into secure, scalable, and responsive digital products.
           </p>
 
           {/* Quick Highlights Micro Row */}
           <div className="mt-6 flex flex-wrap items-center gap-3 text-xs sm:text-sm text-slate-400 font-medium">
             <span className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#060e26]/90 border border-blue-900/50 text-slate-300 shadow-md">
-              <FaCode className="text-cyan-400" /> MERN & Next.js Specialist
+              <FaCode className="text-cyan-400" /> Full-Stack & Next.js Specialist
             </span>
             <span className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#060e26]/90 border border-blue-900/50 text-slate-300 shadow-md">
               <FaBriefcase className="text-blue-400" /> 15+ Projects Delivered
@@ -322,7 +322,7 @@ export default function Hero() {
               className="absolute -bottom-2 -right-2 sm:bottom-4 sm:right-2 bg-[#060e26]/95 backdrop-blur-xl px-4 py-2.5 rounded-2xl shadow-2xl text-xs font-bold text-emerald-300 border border-blue-500/30 flex items-center gap-2"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-              <span>MERN Stack Architect</span>
+              <span>Full-Stack Architect</span>
             </motion.div>
 
           </div>

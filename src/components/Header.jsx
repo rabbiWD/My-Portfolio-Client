@@ -93,7 +93,7 @@ export default function Header() {
               RABBI KHAN
             </span>
             <span className="font-mono text-xs text-cyan-400 font-semibold tracking-wide -mt-0.5">
-              MERN Stack Dev
+              Full-Stack Developer
             </span>
           </div>
         </a>

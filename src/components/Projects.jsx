@@ -14,8 +14,8 @@ const PROJECTS = [
   {
     _id: "p1",
     title: "Web Zen Platform",
-    category: "MERN Stack",
-    desc: "A fully functional MERN stack e-commerce & agency platform featuring secure payment processing, user authentication, cart management, and admin dashboard controls.",
+    category: "Full Stack",
+    desc: "A fully functional full-stack e-commerce & agency platform featuring secure payment processing, user authentication, cart management, and admin dashboard controls.",
     fullDesc:
       "Web Zen Platform is an enterprise-ready full-stack application built to deliver a seamless shopping and administrative experience. It incorporates robust JWT security, real-time cart state management, and an interactive admin portal for managing products, orders, and user permissions.",
     features: [
@@ -33,7 +33,7 @@ const PROJECTS = [
   {
     _id: "p2",
     title: "Financial Management Apps",
-    category: "MERN Stack",
+    category: "Full Stack",
     desc: "A web app for tracking personal finances, managing monthly budgets, visualizing expense charts, and monitoring transaction histories.",
     fullDesc:
       "Financial Management App simplifies monetary tracking for users by providing dynamic income/expense analytics, budget goal setting, and detailed monthly transaction summaries rendered with intuitive visualization charts.",
@@ -89,7 +89,7 @@ const PROJECTS = [
   },
 ];
 
-const CATEGORIES = ["All", "MERN Stack", "Next.js / Frontend", "Full Stack"];
+const CATEGORIES = ["All", "Full Stack", "Next.js / Frontend"];
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -102,7 +102,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-20 sm:py-32 text-slate-100 relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         
         {/* Section Title */}
         <motion.div
@@ -119,7 +119,7 @@ export default function Projects() {
             Featured <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Works</span>
           </h2>
           <p className="text-slate-300 mt-3 max-w-2xl mx-auto text-base sm:text-lg">
-            A curated list of modern full-stack web applications, MERN platforms, and client solutions.
+            A curated list of modern full-stack web applications and client solutions.
           </p>
         </motion.div>
 

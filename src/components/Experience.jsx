@@ -67,7 +67,7 @@ export default function Experience() {
     {
       id: 3,
       category: "Training & Education",
-      title: "Full Stack Web Development (MERN)",
+      title: "Full Stack Web Development",
       organization: "Ostad",
       period: "2023 - 2024",
       type: "Professional Certification",
@@ -80,7 +80,7 @@ export default function Experience() {
       badgeStyle: "bg-emerald-950/90 text-emerald-300 border-emerald-500/40",
       topLineGradient: "from-transparent via-emerald-400 to-transparent",
       description:
-        "In-depth professional training covering full-stack MERN (MongoDB, Express.js, React.js, Node.js), API design, authentication, and cloud deployment.",
+        "In-depth professional training covering full-stack technologies (MongoDB, Express.js, React.js, Node.js), API design, authentication, and cloud deployment.",
       highlights: [
         "Mastered RESTful API engineering, JWT auth flow, and Express middleware architecture.",
         "Designed relational & non-relational database models with MongoDB and PostgreSQL.",

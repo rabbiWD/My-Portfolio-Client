@@ -78,7 +78,7 @@ export default function Footer() {
             Rabbi Khan
           </p>
           <p className="text-xs sm:text-sm text-slate-400 max-w-md mx-auto">
-            MERN Stack Web Developer — Crafting scalable, modern, & responsive digital applications.
+            Full-Stack Web Developer — Crafting scalable, modern, & responsive digital applications.
           </p>
         </div>
 
