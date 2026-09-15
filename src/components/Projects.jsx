@@ -25,7 +25,7 @@ const PROJECTS = [
       "Role-Based Access Control (Landlords & Tenants)",
       "Secure Checkout & Payment Gateway Integration",
     ],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop",
+    image: "/rentnest.png",
     repo: "https://github.com/rabbiWD/RentNest-Client",
     live: "https://rent-nest-client-three.vercel.app/",
     tech: ["Next.js", "React", "TypeScript", "Express.js", "MongoDB", "Tailwind CSS"],
