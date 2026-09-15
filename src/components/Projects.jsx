@@ -12,6 +12,25 @@ import {
 
 const PROJECTS = [
   {
+    _id: "p0",
+    title: "RentNest - Rental Property Marketplace",
+    category: "Full Stack",
+    desc: "A modern rental property marketplace platform where users browse verified listings, submit instant rental inquiries, and complete secure checkout payments.",
+    fullDesc:
+      "RentNest is a comprehensive rental property marketplace built for seamless home discovery, property management, and tenant bookings. It features advanced search filtering by location, interactive property details, instant inquiry submissions, user booking management, and secure payment processing.",
+    features: [
+      "Browse Verified Property Listings with Advanced Search Filters",
+      "Instant Rental Inquiry & Booking Submissions",
+      "User Dashboard for Managing Active & Past Rentals",
+      "Role-Based Access Control (Landlords & Tenants)",
+      "Secure Checkout & Payment Gateway Integration",
+    ],
+    image: "https://i.ibb.co.com/jP44Msqd/rentnest.png",
+    repo: "https://github.com/rabbiWD/RentNest-Client",
+    live: "https://rent-nest-client-three.vercel.app/",
+    tech: ["Next.js", "React", "TypeScript", "Express.js", "MongoDB", "Tailwind CSS"],
+  },
+  {
     _id: "p1",
     title: "Web Zen Platform",
     category: "Full Stack",
