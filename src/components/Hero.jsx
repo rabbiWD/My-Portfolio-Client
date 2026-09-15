@@ -168,7 +168,7 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-10 w-[32rem] h-[32rem] bg-purple-600/08 rounded-full blur-[150px] pointer-events-none z-0"></div>
 
       {/* Centered Content Container */}
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
         
         {/* Left Content Column */}
         <motion.div

@@ -64,7 +64,7 @@ export default function Header() {
       {/* Floating Glass Container */}
       <div
         className={`
-          relative max-w-[1440px] mx-auto rounded-2xl sm:rounded-full transition-all duration-300
+          relative max-w-7xl mx-auto rounded-2xl sm:rounded-full transition-all duration-300
           bg-[#060e26]/95 backdrop-blur-xl border border-blue-600/40 overflow-hidden
           ${
             scrolled
@@ -165,7 +165,7 @@ export default function Header() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden max-w-[1440px] mx-auto mt-2 bg-[#060e26]/95 backdrop-blur-xl border border-blue-600/40 rounded-2xl p-4 shadow-2xl space-y-1.5"
+            className="md:hidden max-w-7xl mx-auto mt-2 bg-[#060e26]/95 backdrop-blur-xl border border-blue-600/40 rounded-2xl p-4 shadow-2xl space-y-1.5"
           >
             {navLinks.map((link) => {
               const Icon = link.icon;

@@ -102,7 +102,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-20 sm:py-32 text-slate-100 relative">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Section Title */}
         <motion.div

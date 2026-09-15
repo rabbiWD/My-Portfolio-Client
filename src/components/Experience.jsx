@@ -119,7 +119,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="py-20 sm:py-32 text-slate-100 relative">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         
         {/* Section Header */}
         <motion.div

@@ -14,7 +14,7 @@ export default function Footer() {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <div className="max-w-[1440px] mx-auto px-6 text-center space-y-6">
+      <div className="max-w-7xl mx-auto px-6 text-center space-y-6">
         
         {/* Social Icons */}
         <div className="flex justify-center items-center gap-5 text-xl">

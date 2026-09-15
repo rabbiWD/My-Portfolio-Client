@@ -145,7 +145,7 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 sm:py-32 text-slate-100 relative">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Main Section Header */}
         <motion.div
@@ -169,7 +169,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="mb-14 text-slate-300 text-base sm:text-lg leading-relaxed max-w-6xl"
+          className="mb-14 text-slate-300 text-base sm:text-lg leading-relaxed max-w-5xl"
         >
           <p className="mb-4">
             Hi, I'm <strong className="text-white font-bold">Rabbi Khan</strong> – a passionate web developer with over <strong className="text-white font-bold">1+ year of experience</strong> building modern full-stack applications. I love transforming ideas into scalable, intelligent, and impactful digital products that solve real-world problems.
