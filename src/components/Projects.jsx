@@ -25,7 +25,7 @@ const PROJECTS = [
       "Role-Based Access Control (Landlords & Tenants)",
       "Secure Checkout & Payment Gateway Integration",
     ],
-    image: "https://i.ibb.co.com/jP44Msqd/rentnest.png",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop",
     repo: "https://github.com/rabbiWD/RentNest-Client",
     live: "https://rent-nest-client-three.vercel.app/",
     tech: ["Next.js", "React", "TypeScript", "Express.js", "MongoDB", "Tailwind CSS"],
@@ -119,6 +119,11 @@ export default function Projects() {
       ? PROJECTS
       : PROJECTS.filter((p) => p.category === selectedCategory);
 
+  const handleImageError = (e) => {
+    e.currentTarget.onerror = null;
+    e.currentTarget.src = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1000&auto=format&fit=crop";
+  };
+
   return (
     <section id="projects" className="py-20 sm:py-32 text-slate-100 relative">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
@@ -186,6 +191,7 @@ export default function Projects() {
                   <img
                     src={p.image}
                     alt={p.title}
+                    onError={handleImageError}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute top-3 right-3 bg-[#0a0f1d]/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-cyan-300 border border-cyan-500/30">
@@ -280,6 +286,7 @@ export default function Projects() {
                 <img
                   src={activeModalProject.image}
                   alt={activeModalProject.title}
+                  onError={handleImageError}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent"></div>
