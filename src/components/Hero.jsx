@@ -10,7 +10,7 @@ import {
   FaShieldAlt,
   FaBriefcase,
 } from "react-icons/fa";
-import photo from "../assets/Rabbi.jpg";
+import photo from "../assets/Rabbi khan.jpeg";
 
 // Interactive Particle & Constellation Canvas Animation Component (Subtle Dark Mode)
 const HeroCanvas = () => {

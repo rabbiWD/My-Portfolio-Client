@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa";
 
 export default function Header() {
-  const cvDownloadLink = "../../Rabbi Resume FullStack.pdf";
+  const cvDownloadLink = "../../public/Rabbi Khan Resume_fullStack.pdf";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
